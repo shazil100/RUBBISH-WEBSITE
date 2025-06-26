@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>$RUBBISH - Meme Coin</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom right, #cfd8dc, #b0bec5); /* steel/light background */
+      color: #000;
+      text-align: center;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    header {
+      padding: 20px 10px 10px 10px;
+    }
+
+    .logo {
+      width: 100px;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin: 0;
+    }
+
+    p.slogan {
+      font-size: 1.2em;
+      margin: 10px 0 30px;
+      font-weight: 500;
+    }
+
+    .about {
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 10px;
+      margin: 20px auto;
+      width: 90%;
+      max-width: 600px;
+      color: #000;
+    }
+
+    .game-container {
+      position: relative;
+      height: 320px;
+    }
+
+    #trashcan {
+      width: 150px;
+      margin-top: 20px;
+      cursor: pointer;
+      position: relative;
+      z-index: 3;
+    }
+
+    .tap-me {
+      font-weight: bold;
+      margin-top: 10px;
+      color: #333;
+      font-size: 1.1em;
+    }
+
+    #coin-area {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .coin {
+      position: absolute;
+      width: 40px;
+      animation: pop 1s ease-out forwards;
+    }
+
+    @keyframes pop {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-150px);
+        opacity: 0;
+      }
+    }
+
+    ul {
+      text-align: left;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .social-link {
+      margin: 20px 0;
+    }
+
+    .social-link a {
+      color: #1da1f2;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    .social-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo.png" alt="$RUBBISH Logo" class="logo">
+    <h1>$RUBBISH</h1>
+    <p class="slogan">Turning Trash into Digital Gold 💥🗑️</p>
+  </header>
+
+  <div class="social-link">
+    🔗 Follow us on <a href="https://x.com/Rubbish_Sol?t=ZVppdqaQOW5XT9gQkgCcdA&s=09" target="_blank">X @Rubbish_Sol</a>
+  </div>
+
+  <div class="about">
+    <h2>About $RUBBISH</h2>
+    <p>$RUBBISH is not just another meme coin — it's a movement. We take what's considered financial trash and turn it into treasure. With community-driven energy and a lot of humor, $RUBBISH is cleaning the crypto space one meme at a time!</p>
+
+    <h2>Our Goals</h2>
+    <ul>
+      <li>🔥 Make $RUBBISH go viral through memes & games</li>
+      <li>🌍 Build a strong meme-loving community</li>
+      <li>🎮 Add more interactive trash games</li>
+      <li>💸 Launch on major DEXs (Uniswap, Raydium)</li>
+      
+    </ul>
+
+    <h2>The Origin Story</h2>
+    <p>Once upon a blockchain, someone looked at all the useless coins in their wallet and thought: “Why not embrace the trash?” That day, $RUBBISH was born — a project that proudly celebrates the nonsense of crypto. Not here to change the world. Just here to dump memes, drop fake coins from trashcans, and laugh to the bank 🚮💰</p>
+  </div>
+
+  <div class="game-container">
+    <img src="trashcan.png" id="trashcan" alt="Trashcan">
+    <div class="tap-me">👆 TAP ME!</div>
+    <div id="coin-area"></div>
+  </div>
+
+  <script>
+    const trashcan = document.getElementById("trashcan");
+    const coinArea = document.getElementById("coin-area");
+    const coins = ["btc.png" , "sol.png"];
+
+    trashcan.addEventListener("click", () => {
+      const selectedCoin = coins[Math.floor(Math.random() * coins.length)];
+      const coin = document.createElement("img");
+      coin.src = selectedCoin;
+      coin.className = "coin";
+      coin.style.left = Math.random() * 200 + "px";
+      coinArea.appendChild(coin);
+
+      setTimeout(() => {
+        coin.remove();
+      }, 1000);
+    });
+  </script>
+
+</body>
+</html>
